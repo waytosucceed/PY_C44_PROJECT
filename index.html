@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width: device-width, initial-scale=1.0">
+    <title>PROJECT</title>
+    <link rel="icon" type="image/x-icon" href="Logo_last.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffde57;
+            text-align: center;
+            color: #333;
+            word-wrap: break-word;
+        }
+
+        .header {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 5px 30px;
+            background-color: white;
+            text-align: left;
+        }
+
+        .logo {
+            width: 5%;
+        }
+
+        img {
+            vertical-align: middle;
+        }
+
+        .header-image {
+            width: 30%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .container {
+            margin: 1rem 2rem;
+            padding: 1rem;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #007bff;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin: 20px 2rem;
+        }
+
+        .highlight {
+            background: #eee;
+            padding: 10px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .image-container {
+            margin: 20px 0;
+        }
+
+        .image-container img {
+            width: 100%;
+            max-width: 250px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer {
+            background: #007bff;
+            color: #fff;
+            padding: 10px;
+            margin-top: 20px;
+            border-radius: 8px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+            font-weight: bold;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        ol {
+            li {
+                margin-bottom: 0.7rem;
+            }
+        }
+
+        .instruction-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .instruction-img {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            justify-content: center;
+            align-items: center;
+            overflow: auto;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Style for hidden image */
+        .hidden-image {
+            display: none;
+            margin-top: 20px;
+            max-width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <img src="./logo/Logo.png" alt="Logo" class="logo" />
+        <img src="./logo/header.png" alt="Header" class="header-image" />
+    </header>
+    <!-- <p style="text-align: center; font-size: 1.7rem; font-weight: bold; margin-bottom: 0;margin-top: 0;">
+        <br>👉🏽<a href="https://github.com/WayToSucceed-Coding/Class-27-Project-Template.git" target="_blank" class="">Click To Get Images</a>
+    </p> -->
+    <div class="container">
+
+        <h1>Snapshot Capture from Webcam
+        </h1>
+        <p style="font-size: 1.5rem;text-align: left;">
+            Build a real-time webcam application that shows a live video feed and lets the user do two things:
+        </p>
+
+        <ul style="font-size: 1.5rem;text-align: left;">
+            <li> Quit the video by pressing the q key.</li>
+            <li> Take a snapshot of the current frame by pressing the s key.</li>
+        </ul>
+
+        <p style="font-size: 1.5rem;text-align: left;">
+            This simulates how most camera apps work — giving you the live preview, and capturing the image only when
+            you're ready.
+
+            <br> <br>
+
+            <b>Step 1: Set up project folder
+            </b>
+        <ul style="font-size: 1.5rem;text-align: left;">
+            <li> Create a folder named <b>webcam_capture</b></li>
+            <li> Inside this folder, create a Python file named <b>snapshot.py</b></li>
+
+
+        </ul>
+
+        </p>
+
+
+
+        <p style="font-size: 1.5rem;text-align: left;">
+            <b>Step 2: Import the OpenCV library
+            </b> <br>
+
+        </p>
+
+        <ul style="font-size: 1.5rem;text-align: left;">
+            <li> Start the file by writing import cv2
+            </li>
+
+
+        </ul>
+
+
+
+        <p style="font-size: 1.5rem;text-align: left;">
+            <b> Step 3: Connect to the webcam</b> <br>
+            Use <b>cv2.VideoCapture(0)</b> and store the result in a variable named <b>cap</b>.
+        </p>
+
+
+
+        <p style="font-size: 1.5rem;text-align: left;">
+            <b>Step 4: Start an infinite loop
+            </b> <br>
+            Write a <b>while True</b>: loop to keep reading frames from the webcam.
+
+
+        </p>
+
+
+
+        <p style="font-size: 1.5rem;text-align: left;">
+            <b>Step 5: Read the frame</b> <br>
+            Inside the loop, write <b>ret, frame = cap.read()</b> to capture the frame and check if it was successful.
+        </p>
+
+
+        <p style="font-size: 1.5rem;text-align: left;">
+            <b>Step 6: Exit if the frame is not read</b> <br>
+            Immediately after reading, check <b>if not ret:</b> and if True, write break.
+        </p>
+
+
+        <p style="font-size: 1.5rem;text-align: left;">
+            <b>Step 7: Display the frame in a window
+            </b> <br>
+            Use <b>cv2.imshow()</b> to show the frame in a window titled <b>"My Video"</b>.
+        </p>
+
+
+
+        <p style="font-size: 1.5rem;text-align: left;">
+            <b>Step 8: Read the key press</b> <br>
+
+            Store the result of <b>cv2.waitKey(1)</b> in a variable called <b>key</b>.
+        </p>
+
+
+        <p style="font-size: 1.5rem;text-align: left;">
+            <b>Step 9: Check if the user has pressed ‘q’
+            </b>
+        </p>
+
+        <ul style="font-size: 1.5rem;text-align: left;">
+            <li> Use if <b>key == ord('q')</b>:</li>
+            <li> If this condition is True, use break to exit the loop.</li>
+
+
+        </ul>
+
+
+        <p style="font-size: 1.5rem;text-align: left;">
+            <b>Step 10: Check if the user has pressed ‘s’
+            </b>
+        </p>
+
+        <ul style="font-size: 1.5rem;text-align: left;">
+            <li> Use <b>elif key == ord('s')</b>:</li>
+            <li> If this condition is True, use <b>cv2.imwrite('snapshot.png', frame)</b> to save the frame, and print a message saying <b>“Snapshot saved as 'snapshot.png'</b>”.</li>
+        </ul>
+
+
+
+        <p style="font-size: 1.5rem;text-align: left;">
+            <b>Step 11: Release the webcam
+            </b> <br>
+            After the loop, write <b>cap.release()</b> to close the camera connection.
+        </p>
+
+
+          <p style="font-size: 1.5rem;text-align: left;">
+            <b>Step 12: Close all OpenCV windows
+            </b> <br>
+           Write <b>cv2.destroyAllWindows()</b> to shut down all OpenCV-created windows.
+        </p>
+       
+    
+
+
+
+        <!-- <br><img style="width: 60%;" src="./images/Image_28.png" alt="" class=""> -->
+
+        <div style="display: flex; justify-content: center;margin-bottom: 2%; gap: 10%;">
+            <a href="https://waytosucceed.github.io/PY_projectshare/" target="_blank" class="button">👉 STEPS FOR
+                SUBMITTING PROJECT</a>
+            <!-- <a href="https://github.com/WayToSucceed-Coding/Class-40-Project-Template.git" target="_blank"
+                class="button">👉 CLICK TO GET IMAGES</a> -->
+        </div>
+        <div style="text-align: left;">
+            <button class="button" id="showImageBtn">Sample Output</button>
+        </div>
+
+        <!-- Hidden Images -->
+
+        <img style="width: 60%;" src="./images/Image_44.gif" alt="Sample GIF" id="sampleImage1" class="hidden-image">
+
+    </div>
+
+    <script>
+        // Get the image and button elements
+
+        var image1 = document.getElementById("sampleImage1");
+
+        var button = document.getElementById("showImageBtn");
+
+        // When the user clicks the button, toggle the visibility of both images
+        button.onclick = function () {
+            if (image1.style.display === "none" || image1.style.display === "") {
+
+                image1.style.display = "block"; // Show the second image
+            } else {
+
+                image1.style.display = "none"; // Hide the first image
+                // Hide the second image
+            }
+        }
+    </script>
+
+</body>
+
+</html>
